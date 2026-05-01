@@ -113,7 +113,7 @@ const Navbar = () => {
                             </ul>
                         </div>
                         <div className="">
-                            <p className="text-muted-foreground mb-5 md:mb-8">
+                            <p className="text-muted-foreground mb-4 md:mb-8">
                                 MENU
                             </p>
                             <ul className="space-y-3">
@@ -147,7 +147,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="w-full max-w-[300px] mx-8 sm:mx-auto">
-                    <p className="text-muted-foreground mb-4">GET IN TOUCH</p>
+                    <p className="text-muted-foreground md:mb-4">GET IN TOUCH</p>
                     <a href={`mailto:${GENERAL_INFO.email}`}>
                         {GENERAL_INFO.email}
                     </a>

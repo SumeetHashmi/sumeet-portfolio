@@ -2,6 +2,22 @@ import { IProject } from '@/types';
 
 const PLACEHOLDER_IMG = '/logo/framer-motion.svg';
 
+const PROJECT_IMAGE_BASE = '/projects/images';
+
+/** Filenames in public/projects/images, named per project. */
+const PROJECT_IMAGE_FILE: Record<string, string> = {
+    podpress: 'Podpress.png',
+    'mapped-city': 'MappedCity.png',
+    linkwave: 'Linkwave.png',
+    pedlar: 'Pedlar.png',
+};
+
+const projectImages = (slug: string) => {
+    const file = PROJECT_IMAGE_FILE[slug];
+    const url = file ? `${PROJECT_IMAGE_BASE}/${file}` : PLACEHOLDER_IMG;
+    return { thumbnail: url, longThumbnail: url, images: [url] as string[] };
+};
+
 export const GENERAL_INFO = {
     email: 'Sumeethashmi@gmail.com',
 
@@ -50,100 +66,62 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
+        title: 'Podpress',
+        slug: 'podpress',
+        liveUrl: 'https://podpress.so',
+        description: `
+            <p>
+          PodPress is an AI-powered tool that automatically converts podcast episodes into ready-to-send newsletters in minutes. Users simply connect a podcast RSS feed, upload an MP3, or paste a YouTube link — and PodPress generates polished, formatted newsletter content with no manual editing required.
+            </p>
+        `,
+        techStack: ['Next.js', 'Tailwind CSS', 'OpenAI', 'ElevenLabs'],
+        ...projectImages('podpress'),
+    },
+    {
         title: 'Mapped City',
         slug: 'mapped-city',
         liveUrl: 'https://mappedcity.com',
-        year: 2024,
         description: `
             <p>
                 A travel discovery platform that curates local favorites and hidden gems in cities. Built with Next.js, Tailwind CSS,
                 and integrated with mapping APIs for seamless location discovery.
             </p>
         `,
-        role: `
-            <p>
-                Frontend ownership end to end: discovery experiences, map-driven UX, and production-ready layouts
-                aligned with design and performance goals (responsive UI, API integration).
-            </p>
-        `,
         techStack: ['Next.js', 'Tailwind CSS', 'Mapping APIs', 'REST APIs'],
-        thumbnail: PLACEHOLDER_IMG,
-        longThumbnail: PLACEHOLDER_IMG,
-        images: [PLACEHOLDER_IMG],
-    },
-    {
-        title: 'Vonterra',
-        slug: 'vonterra',
-        liveUrl: 'https://vonterra.io',
-        year: 2024,
-        description: `
-            <p>
-                A digital product studio partnering with founders to build scalable software — offering mobile/web design, UX
-                audits, and design systems. Includes Klimter (subscription design service) and Saget (SaaS for product-market
-                fit).
-            </p>
-        `,
-        role: `
-            <p>
-                Frontend implementation for studio and product surfaces: marketing and product pages, narrative UX,
-                and UI consistent with design-system and brand guidelines.
-            </p>
-        `,
-        techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Design systems'],
-        thumbnail: PLACEHOLDER_IMG,
-        longThumbnail: PLACEHOLDER_IMG,
-        images: [PLACEHOLDER_IMG],
+        ...projectImages('mapped-city'),
     },
     {
         title: 'LinkWave',
         slug: 'linkwave',
         liveUrl: 'https://linkwave-frontend.vercel.app',
-        year: 2024,
         description: `
             <p>
                 A personalized link-sharing platform with a built-in AI assistant (powered by LLM APIs) that analyzes social media
                 content to auto-generate engaging bios and captions, supporting profile customization and seamless sharing.
             </p>
         `,
-        role: `
-            <p>
-                Frontend for profile and link workflows, AI-assisted flows (prompting, results presentation), and
-                sharing UX; integrated LLM APIs and deployed on Vercel.
-            </p>
-        `,
         techStack: ['Next.js', 'React', 'LLM APIs', 'Vercel', 'TypeScript'],
-        thumbnail: PLACEHOLDER_IMG,
-        longThumbnail: PLACEHOLDER_IMG,
-        images: [PLACEHOLDER_IMG],
+        ...projectImages('linkwave'),
     },
     {
         title: 'Pedlar',
         slug: 'pedlar',
         liveUrl: 'https://dev.pedlar.store',
-        year: 2024,
         description: `
             <p>
                 An e-commerce platform enabling creators and influencers to build personalized digital storefronts, integrated with
                 partner brand APIs for product showcasing and selling.
             </p>
         `,
-        role: `
-            <p>
-                Storefront UI, catalog and product presentation, and integration with partner brand APIs for listing,
-                merchandising, and checkout-related flows.
-            </p>
-        `,
         techStack: ['React', 'Next.js', 'REST APIs', 'E-commerce'],
-        thumbnail: PLACEHOLDER_IMG,
-        longThumbnail: PLACEHOLDER_IMG,
-        images: [PLACEHOLDER_IMG],
+        ...projectImages('pedlar'),
     },
 ];
 
 export const MY_EXPERIENCE = [
     {
         title: 'Frontend Engineer',
-        company: 'Visiata Systems International · Cyaymont, Delaware',
+        company: 'Visiata Systems International · Claymont, Delaware',
         duration: 'Apr 2024 – Present',
     },
     {
