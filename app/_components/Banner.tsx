@@ -1,7 +1,6 @@
 'use client';
 import ArrowAnimation from '@/components/ArrowAnimation';
 import Button from '@/components/Button';
-import { GENERAL_INFO } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -56,13 +55,13 @@ const Banner = () => {
                         .Frontend Engineer with 4+ years of experience building scalable web apps with React.js, Next.js, and TypeScript. I deliver end-to-end products with pixel-perfect UIs, smooth animations, and AI-driven automation integrations, focusing on performance, clean code, and seamless user experience.                    </p>
                     <Button
                         as="link"
+                        href="/Sumeet%20Hashmi-Frontend%20Engineer.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={`mailto:${GENERAL_INFO.email}?subject=${encodeURIComponent(GENERAL_INFO.emailSubject)}`}
                         variant="primary"
                         className="mt-9 banner-button slide-up-and-fade"
                     >
-                        Get in touch
+                        Download resume
                     </Button>
                 </div>
 
