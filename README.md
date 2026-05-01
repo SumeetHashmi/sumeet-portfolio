@@ -16,7 +16,6 @@ If you like my work, give it a star⭐.
 
 ### TL;DR
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [tajmirul.site](https://tajmirul.site/). Thanks!
 
 ## 🛠 Installation & Set Up
 
